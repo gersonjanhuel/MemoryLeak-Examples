@@ -8,12 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        navigationItem.title = "First VC"
     }
-
-
+    
+    
+    @IBAction func openSecondVC(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
